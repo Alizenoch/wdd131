@@ -3,42 +3,66 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>WDD 131: Dynamic Web Fundamentals - Alison Hopa</title>
+    <meta name="author" content="Alison Hopa" />
     <meta name="description"
-        content="WDD 131 - Dynamic Web Fundamentals course by Alison Hopa. This page covers HTML, CSS, JavaScript, and responsive web design principles.">
-    <meta name="author" content="Alison Hopa">
-    <title>WDD 131 - Dynamic Web Fundamentals - Alison Hopa</title>
-    <link rel="stylesheet" href="base.css">
-    <script src="getdates.js" defer></script>
+        content="WDD 131 - Dynamic Web Fundamentals and the W01 assignment. The webpage presents information about the author and his home state." />
+    <link rel="stylesheet" href="styles/base.css">
 </head>
 
 <body>
     <header>
-        <h1>WDD 131 - Dynamic Web Fundamentals</h1>
+        <h1>WDD 131: Dynamic Web Fundamentals - Alison Hopa</h1>
         <nav>
             <ul>
-                <li><a href="https://www.linkedin.com/in/alison-hopa-4579a1a7">LinkedIn Profile</a></li>
+                <li><a href="#">LinkedIn</a></li>
                 <li><a href="https://byui.instructure.com/">I-Learn</a></li>
-                <li><a href="https://www.churchofjesuschrist.org/study/scriptures/bofm/1-ne/3?lang=eng&id=p7#p7">Favorite
-                        Scripture</a></li>
-                <li><a href="#">Final Project Folder</a></li>
+                <li><a
+                        href="https://www.churchofjesuschrist.org/study/scriptures/bofm/1-ne/3?lang=eng&id=p7#p7">Scripture</a>
+                </li>
+                <li><a href="#">Final Project</a></li>
             </ul>
         </nav>
     </header>
     <main>
-        <section>
-            <h2>Course Overview</h2>
-            <p>This section covers the basics of HTML, CSS, JavaScript, and responsive web design principles.</p>
-        </section>
-        <section>
-            <h2>Course Content</h2>
-            <p>Detailed lessons and resources will be provided here.</p>
-        </section>
+        <div class="card">
+            <h2>About Me</h2>
+            <p>My name is Alison Hopa and I'm doing my Wdd 131- Dynamic Web Fundamental this semester.I am very
+                facinated by this course and would like to learn as much as I can from this course. After this semester
+                I hope to use this skills to start developing other website apart from my personal one.I really want to
+                learn more and become better in developing website.Html,css and javascript be good to me.</p>
+            <img src="https://scontent.fpom2-1.fna.fbcdn.net/v/t39.30808-6/452872319_1798230024033632_4518597290632488735_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=833d8c&_nc_ohc=stvjCSmGccsQ7kNvgF75iRa&_nc_ht=scontent.fpom2-1.fna&oh=00_AYB-71BJhHNsWMNXqQcI8O4eWDiemRHhTj6biAKolN0cZA&oe=66FC823B"
+                width="87" alt="Chilling">
+
+            <h2>Port Moresby,Papua New Guinea</h2>
+            <p>Port Moresby, is the capital city of Papua New Guinea. It is a nation situated in the Pacific between
+                Australia and Indonesia.It's official language is English and tok pisin is locally spoken as the main
+                languges apart from the 800 plus different language of different tribes. It gained it's independence
+                from Australia in 1975. It has 22 provinces and the second largest city is Lae.The country is rich in
+                natural resources and diverse culture heritage however poorly managed.</p>
+            <img src="https://media.istockphoto.com/id/1417699644/vector/flag-of-papua-new-guinea-official-colors-flat-vector-illustration.jpg?s=1024x1024&w=is&k=20&c=QO4FG94Ji0Se8UUF9fBebtdcdhVMz-SOtVuX2Iaqb6E="
+                width="87" alt="PNG FLAG">
+        </div>
+
+        <aside>
+            <h2>Web Dev Resources</h2>
+            <ol>
+                <li><a href="https://developer.mozilla.org/en-US/">MDN Web Docs</a></li>
+                <li><a href="https://www.freecodecamp.org/">freeCodeCamp</a></li>
+                <li><a href="https://css-tricks.com/">CSS-Tricks</a></li>
+                <li><a href="https://javascript.info/">JavaScript.info</a></li>
+                <li><a href="https://github.com/">GitHub</a></li>
+            </ol>
+        </aside>
     </main>
     <footer>
-        <p>© <span id="currentyear"></span> Alison Hopa. Papua New Guinea.</p>
-        <p id="lastModified"></p>
+        <div>
+            <p>&copy; 2024 - Alison Hopa - Port Moresby PNG</p>
+            <p id="dat"></p>
+        </div>
     </footer>
+    <script src="scripts/getdates.js" defer></script>
 </body>
 
 </html>
