@@ -1,19 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Name - WDD 131</title>
+    <title>WDD 131 - Dynamic Web Fundamentals - Alison Hopa </title>
+    <meta name="description"
+        content="WDD 131 – Dynamic Web Fundamentals by Alison Hopa. Learn about web development, HTML, CSS, and more.">
     <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Roboto:wght@400;700&display=swap"
+        rel="stylesheet"> <!-- Added Google Fonts link -->
+    <script src="getdates.js" defer></script>
+        rel="stylesheet"> <!-- Added Google Fonts link -->
 </head>
+
 <body>
     <header>
         <nav>
-            <!-- Navigation links go here -->
             <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><a href="https://www.linkedin.com" target="_blank">LinkedIn</a></li>
+                <li><a href="https://byupw.instructure.com/" target="_blank">Canvas</a></li>
+                <li><a href="https://www.churchofjesuschrist.org/study/scriptures/bofm/1-ne/3?lang=eng&id=p7#p7"
+                        target="_blank">Favorite Scripture</a></li>
+                <li><a href="#" target="_blank">Final Project</a></li>
             </ul>
         </nav>
         <h1>Header Content</h1>
@@ -23,9 +32,25 @@
             <h2>Main Content</h2>
             <p>This is the main content area.</p>
         </section>
+        <section class="card">
+            <h2>Card 1 Heading</h2>
+            <img src="images/card1.jpg" alt="Description of card 1 image">
+            <p>This is the content for card 1.</p>
+        </section>
+        <section class="card">
+            <h2>Card 2 Heading</h2>
+            <img src="images/card2.jpg" alt="Description of card 2 image">
+            <p>This is the content for card 2.</p>
+        </section>
     </main>
     <footer>
-        <p>Footer Content</p>
+        <p>&copy; <span id="currentyear"></span> Your Name, Your State or Country</p>
+        <p id="lastModified"></p>
     </footer>
+    <script>
+        document.getElementById('currentyear').textContent = new Date().getFullYear();
+        document.getElementById('lastModified').textContent = 'Last Modified: ' + document.lastModified;
+    </script>
 </body>
+
 </html>
