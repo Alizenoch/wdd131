@@ -97,3 +97,14 @@ figcaption {
 footer p {
     margin: 5px 0;
 }
+
+/* Add a basic @media query */
+@media screen and (max-width: 768px) {
+    body {
+        font-size: 90%;
+    }
+
+    nav ul {
+        flex-direction: column;
+    }
+}
