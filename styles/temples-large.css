@@ -1,0 +1,27 @@
+/* Styles for large screens */
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+header,
+footer {
+    font-size: 1.5em;
+}
+
+nav ul {
+    justify-content: flex-start;
+    display: flex;
+    /* Always show menu in larger views */
+    flex-direction: row;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+#hamburger {
+    display: none;
+    /* Hide hamburger button in larger views */
+}
