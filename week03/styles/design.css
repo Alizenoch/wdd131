@@ -1,0 +1,68 @@
+/* Starter CSS Code */
+
+.callout {
+    padding: 15px;
+    background-color: #ffffff; /* Updated for better contrast */
+    color: #333333; /* Ensures sufficient contrast with the background */
+    border: 1px solid #ddd;
+    margin: 20px 0;
+}
+footer {
+    background: #35424a;
+    color: #ffffff;
+    text-align: left;
+    padding: 10px 0;
+    margin-top: 20px;
+}
+
+main h2 {
+    grid-column: span 2;
+}
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+header {
+    background: #35424a;
+    color: #ffffff;
+    padding: 10px 0;
+    text-align: left;
+    text-align: center;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    background: #e8491d;
+    padding: 10px 0;
+}
+
+nav a {
+    color: #ffffff;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+.container {
+    max-width: 1100px;
+    margin: auto;
+    overflow: hidden;
+    padding: 20px;
+}
+
+footer {
+    background: #35424a;
+    color: #ffffff;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 20px;
+}

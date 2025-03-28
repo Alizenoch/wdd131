@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Images</title>
+    <style>
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Responsive Images Example</h1>
+    </header>
+    <main>
+        <section>
+            <h2>Sample Image</h2>
+            <img src="hero-large.webp" alt="A vibrant landscape showcasing temple during sunset">
+        </section>
+        <div class="hero">
+            <p>This is the hero section.</p>
+            <!-- Added the picture element below -->
+            <picture>
+                 <!-- Added source element for responsive image handling -->
+                          <!-- Source element for the largest image -->
+                             <!-- Updated the media attribute for the large hero image -->
+                <source srcset="image-large.webp" media="(min-width: 800px)">
+                <!-- Source for the medium image -->
+                <source srcset="image-medium.webp" media="(min-width: 400px)">
+                   <!-- Fallback img element with width and height attributes set -->
+                <img src="image-small.webp" alt="A vibrant landscape showcasing temple during sunset" width="1500" height="750">
+            </picture>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2025 Alison Hopa</p>
+    </footer>
+</body>
+</html>
