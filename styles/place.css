@@ -1,17 +1,69 @@
 /* Global styles */
 :root {
-    --font-family: 'Roboto', sans-serif; /* Define the font family here */
-    --primary-color: #ff4f5a;
-    --secondary-color: #2d3047;
-    --accent-color: #f1d302;
-    --font-family: Arial, sans-serif;
+    --primary-color: #ff4f5a; /* Updated primary color */
+    --secondary-color: #2d3047; /* Updated secondary color */
+    --accent-color: #f1d302; /* Accent color */
+    --font-size-base: 16px; /* Base font size */
+    --font-family: 'Roboto', sans-serif; /* Global font family */
 }
 
 body {
+     
+        /* Apply the Google Font */
+    font-family: var(--font-family); /* Use the defined variable for the font */
+    font-size: var(--font-size-base); /* Use the variable for the font size */
+    margin: 0; /* Remove default margin */
+    padding: 20px; /* Set padding */
+    background-color: var(--secondary-color); /* Use the defined variable for background color */
+    color: var(--primary-color); /* Use the defined variable for text color */
+
+    h1 {
+    color: var(--accent-color); /* Accent color for headings */
+    font-weight: 700; /* Bold weight for headings */
+    }
     
-    font-family: var(--font-family);
-    margin: 0;
-    padding: 0;
+    p {
+        color: var(--primary-color); /* Primary color for paragraphs */
+        font-weight: 400; /* Regular weight from Google Fonts */
+    }
+
+    /* Styles for devices with a maximum width of 600px (mobile devices) */
+@media (max-width: 600px) {
+    body {
+        padding: 10px; /* Less padding for smaller screens */
+    }
+
+    h1 {
+        font-size: 1.5em; /* Smaller font size for headings */
+    }
+
+    p {
+        font-size: 1em; /* Reduce paragraph font size */
+    }
+
+    /* Styles for devices with widths between 601px and 1200px (tablets) */
+@media (min-width: 601px) and (max-width: 1200px) {
+    h1 {
+        font-size: 2em; /* Medium font size for headings */
+    }
+
+    p {
+        font-size: 1.2em; /* Increase paragraph font size slightly */
+    }
+}
+
+/* Styles for devices wider than 1200px (desktops) */
+@media (min-width: 1201px) {
+    h1 {
+        font-size: 2.5em; /* Larger font size for headings */
+    }
+
+    p {
+        font-size: 1.5em; /* Larger font size for paragraphs */
+    }
+}
+}
+
 }
 
 header, footer {
