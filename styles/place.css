@@ -1,0 +1,63 @@
+/* Global styles */
+:root {
+    --font-family: 'Roboto', sans-serif; /* Define the font family here */
+    --primary-color: #ff4f5a;
+    --secondary-color: #2d3047;
+    --accent-color: #f1d302;
+    --font-family: Arial, sans-serif;
+}
+
+body {
+    
+    font-family: var(--font-family);
+    margin: 0;
+    padding: 0;
+}
+
+header, footer {
+    background-color: var(--primary-color);
+    color: white;
+    text-align: center;
+    padding: 1rem;
+}
+
+main {
+    padding: 2rem;
+}
+
+.hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.hero img {
+    width: 100%;
+    max-width: 1200px;
+}
+
+.weather {
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+}
+
+.weather h2::after {
+    content: "🌤️";
+    margin-left: 0.5rem;
+}
+
+@media (max-width: 600px) {
+    .weather {
+        padding: 1rem;
+    }
+}
+
+@media (max-width: 1000px) {
+    .hero img {
+        max-width: 100%;
+    }
+}
+
