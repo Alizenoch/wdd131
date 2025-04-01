@@ -1,9 +1,3 @@
-/* Ensure consistent font */
-body {
-    font-family: 'Roboto', sans-serif;
-    /* ...existing styles... */
-}
-
 /* Styles for large screens */
 main {
     max-width: 1200px;
