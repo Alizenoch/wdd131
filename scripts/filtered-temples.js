@@ -83,5 +83,3 @@ const temples = [
       displayAllTemples();
   });
   
-
-
