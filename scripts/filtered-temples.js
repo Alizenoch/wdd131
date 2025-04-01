@@ -1,3 +1,4 @@
+console.log("JavaScript file loaded successfully");
 const temples = [
     {
       templeName: "Aba Nigeria",
