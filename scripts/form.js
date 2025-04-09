@@ -1,32 +1,52 @@
-    document.addEventListener("DOMContentLoaded", () => {
-        // Retrieve the current count from localStorage or initialize to 0
-        let reviewCount = localStorage.getItem("reviewCount") ? parseInt(localStorage.getItem("reviewCount")) : 0;
-    
-        // Increment the count since the page is successfully loaded
-        reviewCount++;
-    
-        // Store the updated count in localStorage
-        localStorage.setItem("reviewCount", reviewCount);
-    
-        // Display the updated count
-        document.getElementById("review-counter").textContent = `Reviews submitted: ${reviewCount}`;
-    
-    
+document.addEventListener("DOMContentLoaded", function () {
+    const form = document.querySelector("form");
+    const email = document.querySelector("#email");
+    const rating = document.querySelectorAll("input[name='rating']");
+    const submitButton = document.querySelector("#submit");
 
-    // Product Array
-    const products = [
-        { id: "fc-1888", name: "Flux Capacitor", averagerating: 4.5 },
-        { id: "fc-2050", name: "Power Laces", averagerating: 4.7 },
-        { id: "fs-1987", name: "Time Circuits", averagerating: 3.5 },
-        { id: "ac-2000", name: "Low Voltage Reactor", averagerating: 3.9 },
-        { id: "jj-1969", name: "Warp Equalizer", averagerating: 5.0 }
-    ];
+    // Email validation
+    email.addEventListener("input", function () {
+        const pattern = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/i;
+        if (!pattern.test(email.value)) {
+            email.setCustomValidity("Please enter a valid email address.");
+        } else {
+            email.setCustomValidity("");
+        }
+    });
 
-    // Dynamically Populate Select Options
-    products.forEach(product => {
-        let option = document.createElement("option");
-        option.value = product.id;  // Use product ID as value
-        option.textContent = product.name;  // Use product name for display
-        productSelect.appendChild(option);
+    // Ensure rating is selected
+    form.addEventListener("submit", function (event) {
+        let ratingSelected = false;
+        rating.forEach(radio => {
+            if (radio.checked) {
+                ratingSelected = true;
+            }
+        });
+
+        if (!ratingSelected) {
+            event.preventDefault();
+            alert("Please select a rating before submitting.");
+        }
+    });
+
+    // Prevent empty fields
+    form.addEventListener("submit", function (event) {
+        const requiredFields = document.querySelectorAll("[required]");
+        let allFilled = true;
+
+        requiredFields.forEach(field => {
+            if (!field.value) {
+                allFilled = false;
+                field.style.border = "2px solid red";
+            } else {
+                field.style.border = "1px solid #ccc";
+            }
+        });
+
+        if (!allFilled) {
+            event.preventDefault();
+            alert("Please fill in all required fields.");
+        }
     });
 });
+
