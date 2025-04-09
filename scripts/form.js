@@ -1,18 +1,48 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const form = document.querySelector("form");
+    const form = document.querySelector("#review-form");
     const email = document.querySelector("#email");
-    const rating = document.querySelectorAll("input[name='rating']");
-    const submitButton = document.querySelector("#submit");
+    const productDropdown = document.querySelector("#product");
+    const installationDate = document.querySelector("#installation_date");
+    const review = document.querySelector("#review");
+    const rating = document.querySelectorAll("input[name='rating_value']");
 
-    // Email validation
-    email.addEventListener("input", function () {
-        const pattern = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/i;
-        if (!pattern.test(email.value)) {
-            email.setCustomValidity("Please enter a valid email address.");
-        } else {
-            email.setCustomValidity("");
-        }
+    // Product Array
+    const productList = [
+        { id: "product1", name: "Product 1" },
+        { id: "product2", name: "Product 2" },
+        { id: "product3", name: "Product 3" },
+        { id: "product4", name: "Product 4" }
+    ];
+
+    // Populate dropdown dynamically
+    productList.forEach(product => {
+        let option = document.createElement("option");
+        option.value = product.id;
+        option.textContent = product.name;
+        productDropdown.appendChild(option);
     });
+
+    // Load saved form data
+    function loadFormData() {
+        email.value = localStorage.getItem("email") || "";
+        productDropdown.value = localStorage.getItem("product_name") || "";
+        installationDate.value = localStorage.getItem("installation_date") || "";
+        review.value = localStorage.getItem("review_text") || "";
+    }
+
+    // Save form data
+    function saveFormData() {
+        localStorage.setItem("email", email.value);
+        localStorage.setItem("product_name", productDropdown.value);
+        localStorage.setItem("installation_date", installationDate.value);
+        localStorage.setItem("review_text", review.value);
+    }
+
+    // Listen for input changes
+    form.addEventListener("input", saveFormData);
+
+    // Load stored data when the page loads
+    loadFormData();
 
     // Ensure rating is selected
     form.addEventListener("submit", function (event) {
@@ -29,24 +59,12 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-    // Prevent empty fields
-    form.addEventListener("submit", function (event) {
-        const requiredFields = document.querySelectorAll("[required]");
-        let allFilled = true;
-
-        requiredFields.forEach(field => {
-            if (!field.value) {
-                allFilled = false;
-                field.style.border = "2px solid red";
-            } else {
-                field.style.border = "1px solid #ccc";
-            }
-        });
-
-        if (!allFilled) {
-            event.preventDefault();
-            alert("Please fill in all required fields.");
-        }
+    // Clear localStorage when form is submitted
+    form.addEventListener("submit", function () {
+        localStorage.removeItem("email");
+        localStorage.removeItem("product_name");
+        localStorage.removeItem("installation_date");
+        localStorage.removeItem("review_text");
     });
 });
 
