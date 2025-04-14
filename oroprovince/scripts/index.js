@@ -1,18 +1,19 @@
-document.getElementById("exploreBtn").addEventListener("click", function() {
-    alert("Explore Oro Province's beauty and traditions!");
-});
-
-// Smooth scrolling for navigation links
 document.querySelectorAll("nav ul li a").forEach(link => {
     link.addEventListener("click", function(e) {
-        e.preventDefault();
         const targetId = this.getAttribute("href").substring(1);
         const targetSection = document.getElementById(targetId);
+
+        // Prevent default only if scrolling to a section on the same page
         if (targetSection) {
+            e.preventDefault();
             window.scrollTo({
                 top: targetSection.offsetTop - 50,
                 behavior: "smooth"
             });
+        } else {
+            // Allow navigation to other pages
+            window.location.href = this.href;
         }
     });
 });
+

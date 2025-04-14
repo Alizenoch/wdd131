@@ -2,23 +2,35 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
     text-align: center;
+    background-color: #f4f4f4;
 }
 
 header {
     background-color: #206a5d;
     padding: 1rem;
     color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+#logo {
+    width: 80px;
+    margin-left: 15px;
 }
 
 nav ul {
     list-style-type: none;
     padding: 0;
+    display: flex;
 }
 
 nav ul li {
-    display: inline;
     margin: 0 15px;
 }
 
@@ -28,26 +40,39 @@ nav ul li a {
     font-weight: bold;
 }
 
-#about-section, #history, #culture {
-    padding: 40px 20px;
-    background-color: white;
+#about-section, #history, #culture, #facts {
+    padding: 50px 20px;
+    background: white;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
     margin: 20px auto;
     width: 80%;
     border-radius: 10px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 img {
-    width: 80%;
-    border-radius: 10px;
-    margin-top: 10px;
+    width: 100%;
+    max-width: 600px;
+    border-radius: 8px;
+    margin: 20px 0;
 }
 
 footer {
     background-color: #206a5d;
     color: white;
     padding: 1rem;
-    position: relative;
-    bottom: 0;
-    width: 100%;
+}
+
+@media screen and (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
 }
