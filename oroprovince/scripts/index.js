@@ -3,16 +3,33 @@ document.querySelectorAll("nav ul li a").forEach(link => {
         const targetId = this.getAttribute("href").substring(1);
         const targetSection = document.getElementById(targetId);
 
-        // Prevent default only if scrolling to a section on the same page
         if (targetSection) {
             e.preventDefault();
             window.scrollTo({
                 top: targetSection.offsetTop - 50,
                 behavior: "smooth"
             });
+
+            // Save last visited section using template literals
+            localStorage.setItem("lastVisitedSection", `${targetId}`);
         } else {
-            // Allow navigation to other pages
             window.location.href = this.href;
         }
     });
+});
+
+// Scroll to last visited section on page load
+document.addEventListener("DOMContentLoaded", () => {
+    let lastSection = localStorage.getItem("lastVisitedSection");
+    if (lastSection) {
+        let targetSection = document.getElementById(lastSection);
+        if (targetSection) {
+            window.scrollTo({
+                top: targetSection.offsetTop - 50,
+                behavior: "smooth"
+            });
+
+            console.log(`Returning to section: ${lastSection}`);
+        }
+    }
 });
