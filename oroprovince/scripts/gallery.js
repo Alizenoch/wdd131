@@ -1,28 +1,44 @@
+const galleryImages = [
+    { src: "images/scenic-view.png", alt: "Scenic View of Oro Province's Mountains" },
+    { src: "images/festivals.webp", alt: "Local Festival Celebration" },
+    { src: "images/wildlife.webp", alt: "Rare Wildlife of Oro Province" },
+    { src: "images/waterfalls.webp", alt: "Majestic Waterfall in the Highlands" },
+    { src: "images/beach.webp", alt: "Beautiful Coastal Beach" },
+    { src: "images/forest.webp", alt: "Dense Rainforest in Oro Province" }
+];
 
-
-// Dynamically populate gallery using the object
 document.addEventListener("DOMContentLoaded", () => {
     const galleryContainer = document.querySelector(".image-grid");
 
-    for (const key in galleryImages) {
+    galleryImages.forEach(image => {
         const imgElement = document.createElement("img");
-        imgElement.src = galleryImages[key].src;
-        imgElement.alt = galleryImages[key].alt;
+        imgElement.src = image.src;
+        imgElement.alt = image.alt;
         imgElement.loading = "lazy";
+        galleryContainer.appendChild(imgElement);
 
-        imgElement.addEventListener("click", function() {
+        imgElement.addEventListener("click", () => {
             if (document.querySelector(".lightbox")) return;
 
             const lightbox = document.createElement("div");
             lightbox.classList.add("lightbox");
-            lightbox.innerHTML = `<img src="${this.src}" alt="${this.alt}">`;
+            lightbox.innerHTML = `
+                <div class="lightbox-content">
+                    <img src="${image.src}" alt="${image.alt}">
+                    <p>${image.alt}</p>
+                </div>
+            `;
             document.body.appendChild(lightbox);
 
-            lightbox.addEventListener("click", function() {
+            lightbox.addEventListener("click", () => {
                 lightbox.remove();
             });
         });
+    });
 
-        galleryContainer.appendChild(imgElement);
-    }
+    document.addEventListener("keydown", event => {
+        if (event.key === "Escape") {
+            document.querySelector(".lightbox")?.remove();
+        }
+    });
 });
