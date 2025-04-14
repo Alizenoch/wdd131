@@ -10,13 +10,22 @@ header {
     background-color: #206a5d;
     padding: 1rem;
     color: white;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    position: sticky;
-    top: 0;
-    width: 100%;
-    z-index: 1000;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
 }
 
 #logo {
